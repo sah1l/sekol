@@ -14,14 +14,14 @@
         </tr>
         {% for category in categories %}
             {% for user in category.users %}
-            {% if current_user['name']==user.name or current_user['name']==category.creator %}
+            {% if current_user['name']==user.name or current_user['name']==category.creator or current_user['type'] =='admin'%}
             <tr>
                 <td class="list-buttons-column">
                     <form class="icon" method="post" action="{{ url_for('admin.delete_category', category_id=category.name) }}">
                         <a href="{{ url_for('admin.edit_category', category_id=category.name)}}">
                             <i class="fa fa-edit" title="Edit Record"></i>
                         </a>
-                        {% if current_user['name']==category.creator %}
+                        {% if current_user['name']==category.creator or current_user['type']=='admin' %}
                         <button onclick="return safeConfirm('Are you sure you want to delete category {{ category.name }}?');" title="Delete Record">
                             <i class="fa fa-trash"></i>
                         </button>

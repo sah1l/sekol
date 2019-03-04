@@ -25,12 +25,16 @@ def check_authenticated_user():
     elif request.endpoint in ['admin.change_userinfo', 'admin.change_password', 'admin.delete_user']:
         uid = request.view_args.get('user_id')
         if uid:
-            if not User.query.filter_by(name=uid).first().boss == current_user.name and not uid == current_user.name:
+            if not User.query.filter_by(name=uid).first().boss == current_user.name and not uid == current_user.name\
+                    and not 'admin' == current_user.type:
                 return redirect(url_for("home"))
 
 @mod_admin.route("/", methods=["GET"])
 def show_panel():
-    users = User.query.filter((User.boss==current_user.name) | (User.name==current_user.name))
+    if current_user.type=='admin':
+        users = User.query.all()
+    else:
+        users = User.query.filter((User.boss==current_user.name) | (User.name==current_user.name))
     return render_template("admin_panel/list_users.html", users=users)
 
 
