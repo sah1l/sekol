@@ -13,8 +13,11 @@
             <th>Created By</th>
         </tr>
         {% for category in categories %}
-            {% for user in category.users %}
-            {% if current_user['name']==user.name or current_user['name']==category.creator or current_user['type'] =='admin'%}
+        {% set users = [] %}
+        {% for user in category.users %}
+        {{ users.append(user.name) }}
+        {% endfor %}
+            {% if current_user['name'] in users or current_user['name']==category.creator or current_user['type'] =='admin'%}
             <tr>
                 <td class="list-buttons-column">
                     <form class="icon" method="post" action="{{ url_for('admin.delete_category', category_id=category.name) }}">
@@ -33,7 +36,6 @@
                 <td>{{ category.creator }}</td>
             </tr>
             {% endif %}
-            {% endfor %}
         {% endfor %}
     </table>
 </div>
