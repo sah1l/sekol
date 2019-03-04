@@ -72,7 +72,6 @@ class UserCreateForm(UserInfoForm, PasswordForm):
 
 class CategoryInfoForm(FlaskForm):
     name = StringField('Category Name', validators=[DataRequired()])
-    data_dir = StringField('Category Data directory', validators=[DataRequired()])
     users = SelectMultipleField('Users',
                                 widget=widgets.TableWidget(with_table_tag=True),
                                 option_widget=widgets.CheckboxInput(),

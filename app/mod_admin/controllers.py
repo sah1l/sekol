@@ -131,7 +131,7 @@ def add_category():
 
     if form.validate_on_submit():
         category = Category(name=form.name.data,
-                           data_dir=form.data_dir.data)
+                           data_dir=form.name.data)
         users = []
 
         for user_id in form.users.data:
@@ -158,7 +158,7 @@ def edit_category(category_id):
 
     if form.validate_on_submit():
         category.name = form.name.data
-        category.data_dir = form.data_dir.data
+        category.data_dir = form.name.data
         users = []
 
         for user_id in form.users.raw_data:

@@ -20,7 +20,7 @@
                         <a href="{{ url_for('admin.change_userinfo', user_id=user.name)}}">
                             <i class="fa fa-edit" title="Edit Record"></i>
                         </a>
-                        {% if user.boss==current_user.name %}
+                        {% if user.boss==current_user.name or current_user.type=='admin' %}
                         <button onclick="return safeConfirm('Are you sure you want to delete user {{ user.name }}?');"
                                 title="Delete Record" style="margin-left: 10px;">
                             <i class="fa fa-trash"></i>

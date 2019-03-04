@@ -9,7 +9,6 @@
         <tr>
             <th>Actions</th>
             <th>Name</th>
-            <th>Data directory</th>
             <th>Created By</th>
         </tr>
         {% for category in categories %}
@@ -32,7 +31,6 @@
                     </form>
                 </td>
                 <td>{{ category.name }}</td>
-                <td>{{ category.data_dir }}</td>
                 <td>{{ category.creator }}</td>
             </tr>
             {% endif %}
