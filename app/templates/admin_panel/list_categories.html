@@ -13,21 +13,27 @@
             <th>Created By</th>
         </tr>
         {% for category in categories %}
+            {% for user in category.users %}
+            {% if current_user['name']==user.name or current_user['name']==category.creator %}
             <tr>
                 <td class="list-buttons-column">
                     <form class="icon" method="post" action="{{ url_for('admin.delete_category', category_id=category.name) }}">
                         <a href="{{ url_for('admin.edit_category', category_id=category.name)}}">
                             <i class="fa fa-edit" title="Edit Record"></i>
                         </a>
+                        {% if current_user['name']==category.creator %}
                         <button onclick="return safeConfirm('Are you sure you want to delete category {{ category.name }}?');" title="Delete Record">
                             <i class="fa fa-trash"></i>
                         </button>
+                        {% endif %}
                     </form>
                 </td>
                 <td>{{ category.name }}</td>
                 <td>{{ category.data_dir }}</td>
                 <td>{{ category.creator }}</td>
             </tr>
+            {% endif %}
+            {% endfor %}
         {% endfor %}
     </table>
 </div>

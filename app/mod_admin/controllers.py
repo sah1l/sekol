@@ -157,7 +157,7 @@ def edit_category(category_id):
         category.data_dir = form.data_dir.data
         users = []
 
-        for user_id in form.users.data:
+        for user_id in form.users.raw_data:
             user = User.query.filter_by(name=user_id).first()
             users.append(user)
 
@@ -245,7 +245,7 @@ def edit_design(design_id):
         design.name = form.name.data
         categories = []
 
-        for category_id in form.categories.data:
+        for category_id in form.categories.raw_data:
             category = Category.query.filter_by(name=category_id).first()
             categories.append(category)
 

@@ -16,9 +16,11 @@
             <a href="{{ url_for('admin.show_panel') }}">List users</a> |
             <a href="{{ url_for('admin.add_user') }}">Add user</a> |
             <a href="{{ url_for('admin.list_categories') }}">List categories</a> |
-            <a href="{{ url_for('admin.add_category') }}">Add Category</a> |
-            <a href="{{ url_for('admin.list_designs') }}">List Designs</a> |
+            <a href="{{ url_for('admin.add_category') }}">Add Category</a>
+            {% if current_user.allow_upload %}
+            | <a href="{{ url_for('admin.list_designs') }}">List Designs</a> |
             <a href="{{ url_for('admin.add_design') }}">Add Design</a>
+          {% endif %}
         </div>
         {% block sub_content %}{% endblock %}
     </div>
