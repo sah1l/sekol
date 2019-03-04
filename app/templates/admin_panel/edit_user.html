@@ -1,0 +1,14 @@
+{% extends "admin_panel/base.html" %}
+
+{% block sub_content %}
+    <ul class="nav nav-tabs">
+        <li class="nav-item  {{ state_userinfo }}">
+            <a class="nav-link" href="{{ url_for('admin.change_userinfo', user_id=user.name) }}">Change user info</a>
+        </li>
+        <li class="nav-item  {{ state_passw }}">
+            <a class="nav-link" href="{{ url_for('admin.change_password', user_id=user.name) }}">Change password</a>
+        </li>
+    </ul>
+    {% block edit_user %}{% endblock %}
+{% endblock %}
+

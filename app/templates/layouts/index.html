@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sekol Tiles</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="/static/img/sekol.jpeg" rel="icon">
+  <link href="/static/img/sekol.jpeg" rel="apple-touch-icon">
+  <script src="/static/lib/jquery/jquery.min.js"></script>
+    <script src="/static/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="/static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/lib/easing/easing.min.js"></script>
+  <script src="/static/lib/superfish/hoverIntent.js"></script>
+  <script src="/static/lib/superfish/superfish.min.js"></script>
+  <script src="/static/lib/wow/wow.min.js"></script>
+  <script src="/static/lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="/static/lib/magnific-popup/magnific-popup.min.js"></script>
+  <script src="/static/lib/sticky/sticky.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+	  <link href="/static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="/static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="/static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="/static/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="/static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="/static/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: Reveal
+    Theme URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<body id="body">
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container navbar-fixed-top" style="height:100%">
+
+      <div id="logo" class="pull-left" style="height:100%">
+        <!-- Uncomment below if you prefer to use an image logo -->
+         <a href="#body" class="navbar-brand" style="height:100%">
+           <img src="/static/img/sekol.jpeg" alt="" title="" style="height:100%"/></a>
+      </div>
+
+      <nav id="nav-menu-container" style="padding: 20px 0;">
+        <ul class="nav-menu">
+          <li {% if request.endpoint == 'home' %} class="menu-active" {% endif %}><a href="{{ url_for('home') }}">Home</a></li>
+          <li {% if request.endpoint == 'services' %} class="menu-active" {% endif %}><a href="{{ url_for('services') }}">Services</a></li>
+          <li {% if request.endpoint == 'contact' %} class="menu-active" {% endif %}><a href="{{ url_for('contact') }}">Contact</a></li>
+          {% if current_user.allow_create %}
+            <li {% if request.endpoint == 'admin.show_panel' %} class="menu-active" {% endif %}><a href="{{ url_for('admin.show_panel') }}">Dealers</a></li>
+          {% endif %}
+          {% if current_user.is_authenticated %}
+            {% if current_user['categories'] %}
+              <li class="menu-has-children {% if request.endpoint == 'admin.get_designs' %} menu-active {%endif %}">
+                  <a href="">Categories</a>
+                <ul>
+                  {% for category in current_user['categories'] %}
+                  <li><a href="{{ url_for('admin.get_designs', category_id=category.name) }}">{{category.name}}</a></li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% endif %}
+            <li class="menu-has-children"><a href="#">{{ current_user['name'] }}</a>
+                <ul>
+                  <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+                </ul>
+            </li>
+          {% else %}
+              <li {% if request.endpoint == 'auth.login' %} class="menu-active" {% endif %}><a href="{{ url_for('auth.login') }}">Login</a></li>
+          {% endif %}
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+      <main id="content" role="main" class="container">
+
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-block alert-error fade in">
+              <a class="close" data-dismiss="alert">&times;</a>
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      {% block content %}{% endblock %}
+
+    </main>
+  <!--==========================
+    Footer
+  ============================-->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="/static/js/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="/static/js/main.js"></script>
+
+</body>
+</html>

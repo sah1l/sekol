@@ -1,0 +1,29 @@
+{% extends 'layouts/index.html' %}
+{% block content %}
+
+      <section id="portfolio" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+          <h2>{{category}}</h2>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row no-gutters">
+            {% for design in designs %}
+              <div class="col-lg-3 col-md-4">
+                <div class="portfolio-item wow fadeInUp">
+                  <a href="{{ url_for('custom_static.static', filename=design.location) }}" class="portfolio-popup">
+                    <img src="{{ url_for('custom_static.static', filename=design.location) }}" alt="">
+                    <div class="portfolio-overlay">
+                      <div class="portfolio-info"><h2 class="wow fadeInUp">{{design.name}}</h2></div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            {% endfor %}
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
