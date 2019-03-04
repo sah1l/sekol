@@ -71,7 +71,7 @@
           {% if current_user.is_authenticated %}
             {% if current_user['categories'] %}
               <li class="menu-has-children {% if request.endpoint == 'admin.get_designs' %} menu-active {%endif %}">
-                  <a href="">Categories</a>
+                  <a href="">Portfolios</a>
                 <ul>
                   {% for category in current_user['categories'] %}
                   <li><a href="{{ url_for('admin.get_designs', category_id=category.name) }}">{{category.name}}</a></li>
