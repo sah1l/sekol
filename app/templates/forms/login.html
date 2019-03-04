@@ -1,0 +1,40 @@
+{% extends 'layouts/index.html' %}
+{% block content %}
+  <section id="contact" class="wow fadeInUp vertical-center" style="visibility:hidden">
+      <div class="container">
+        <div class="form row justify-content-center align-items-center">
+          <form action="" method="post" class="form-horizontal" role="form" id="login-form" class="contactForm">
+            {{ form.hidden_tag() }}
+              <div class="form-row">
+
+              <div class="form-group">
+                {{ form.name.label }}
+                {{ form.name(size=32, class="form-control") }}
+                {% for error in form.name.errors %}
+                <span class="error">{{ error }}</span>
+                {% endfor %}
+              </div>
+            </div>
+
+              <div class="form-row">
+            <div class="form-group">
+                {{ form.password.label }}
+                <div>{{ form.password(size=32, class="form-control") }}</div>
+                {% for error in form.password.errors %}
+                <span class="error">{{ error }}</span>
+                {% endfor %}
+            </div>
+                  </div>
+              <div class="form-row">
+            <div class="form-group">{{ form.remember_me() }} {{ form.remember_me.label }}</div>
+                  </div>
+            <div class="submit-panel">
+                <div>{{ form.submit(class="btn btn-block") }}</div>
+            </div>
+        </form>
+
+        </div>
+
+      </div>
+    </section>
+{% endblock %}

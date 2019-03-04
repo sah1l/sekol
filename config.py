@@ -1,14 +1,29 @@
 import os
 
-# Grabs the folder where the script runs.
-basedir = os.path.abspath(os.path.dirname(__file__))
+#application directory
+BASEDIR = os.path.abspath(os.path.dirname(__file__))
 
-# Enable debug mode.
-DEBUG = True
 
-# Secret key for session management. You can generate random strings here:
-# https://randomkeygen.com/
-SECRET_KEY = 'my precious'
+class Config(object):
+    DB_CONFIG = {
+        'host': 'localhost',
+        'port': '5432',
+        'database': 'sekol',
+        'user': 'sekol',
+        'password': 'andnotbut',
+    }
 
-# Connect to the database
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'database.db')
+    # class Config(object):
+    SQLALCHEMY_DATABASE_URI = "mysql://%(user)s:%(password)s@%(host)s/%(database)s" % DB_CONFIG
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+    # Enable protection agains *Cross-site Request Forgery (Con e   SRF)*
+    CSRF_ENABLED = True
+
+    #secret key for signing the data. 
+    CSRF_SESSION_KEY = "secret"
+
+    # Secret key for signing cookies
+    SECRET_KEY = "secret"
+
+    UPLOAD_FOLDER = '/home/sahil/deep/website/data'

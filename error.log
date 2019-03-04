@@ -1,1 +1,514 @@
-
+2019-02-03 11:08:14,780 INFO: errors [in sekol.py:14]
+2019-02-03 11:08:17,338 ERROR: Exception on /about [GET] [in /home/sahil/.local/lib/python2.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/sahil/deep/website/flask-boilerplate/app/routes.py", line 16, in about
+    return render_template('pages/placeholder.about.html')
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/sahil/.local/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/sahil/.local/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/deep/website/flask-boilerplate/app/templates/pages/placeholder.about.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "/home/sahil/deep/website/flask-boilerplate/app/templates/layouts/main.html", line 58, in top-level template code
+    <li {% if request.endpoint == 'admin_panel' %} class="active" {% endif %}><a href="{{ url_for('admin_panel') }}">Dealers</a></li>
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/home/sahil/.local/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'admin_panel'. Did you mean 'admin.show_panel' instead?
+2019-02-03 11:08:17,507 ERROR: Exception on /favicon.ico [GET] [in /home/sahil/.local/lib/python2.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1713, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1644, in handle_http_exception
+    return handler(e)
+  File "/home/sahil/deep/website/flask-boilerplate/app/routes.py", line 26, in not_found_error
+    return render_template('errors/404.html'), 404
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/sahil/.local/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/sahil/.local/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/deep/website/flask-boilerplate/app/templates/errors/404.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "/home/sahil/deep/website/flask-boilerplate/app/templates/layouts/main.html", line 58, in top-level template code
+    <li {% if request.endpoint == 'admin_panel' %} class="active" {% endif %}><a href="{{ url_for('admin_panel') }}">Dealers</a></li>
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/home/sahil/.local/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'admin_panel'. Did you mean 'admin.show_panel' instead?
+2019-02-03 11:10:09,090 ERROR: Exception on /about [GET] [in /home/sahil/.local/lib/python2.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/sahil/deep/website/flask-boilerplate/app/routes.py", line 16, in about
+    return render_template('pages/placeholder.about.html')
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/sahil/.local/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/sahil/.local/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/deep/website/flask-boilerplate/app/templates/pages/placeholder.about.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "/home/sahil/deep/website/flask-boilerplate/app/templates/layouts/main.html", line 58, in top-level template code
+    <li {% if request.endpoint == 'admin.show_panel' %} class="active" {% endif %}><a href="{{ url_for('admin.show_panel') }}">Dealers</a></li>
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/home/sahil/.local/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'admin_panel'. Did you mean 'admin.show_panel' instead?
+2019-02-03 11:10:09,181 ERROR: Exception on /favicon.ico [GET] [in /home/sahil/.local/lib/python2.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1713, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1644, in handle_http_exception
+    return handler(e)
+  File "/home/sahil/deep/website/flask-boilerplate/app/routes.py", line 26, in not_found_error
+    return render_template('errors/404.html'), 404
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/sahil/.local/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/sahil/.local/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/deep/website/flask-boilerplate/app/templates/errors/404.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "/home/sahil/deep/website/flask-boilerplate/app/templates/layouts/main.html", line 58, in top-level template code
+    <li {% if request.endpoint == 'admin.show_panel' %} class="active" {% endif %}><a href="{{ url_for('admin.show_panel') }}">Dealers</a></li>
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/home/sahil/.local/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'admin_panel'. Did you mean 'admin.show_panel' instead?
+2019-02-03 11:10:09,682 ERROR: Exception on /about [GET] [in /home/sahil/.local/lib/python2.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/sahil/deep/website/flask-boilerplate/app/routes.py", line 16, in about
+    return render_template('pages/placeholder.about.html')
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/sahil/.local/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/sahil/.local/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/deep/website/flask-boilerplate/app/templates/pages/placeholder.about.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "/home/sahil/deep/website/flask-boilerplate/app/templates/layouts/main.html", line 58, in top-level template code
+    <li {% if request.endpoint == 'admin.show_panel' %} class="active" {% endif %}><a href="{{ url_for('admin.show_panel') }}">Dealers</a></li>
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/home/sahil/.local/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'admin_panel'. Did you mean 'admin.show_panel' instead?
+2019-02-03 11:10:09,777 ERROR: Exception on /favicon.ico [GET] [in /home/sahil/.local/lib/python2.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1713, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1644, in handle_http_exception
+    return handler(e)
+  File "/home/sahil/deep/website/flask-boilerplate/app/routes.py", line 26, in not_found_error
+    return render_template('errors/404.html'), 404
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/sahil/.local/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/sahil/.local/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/deep/website/flask-boilerplate/app/templates/errors/404.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "/home/sahil/deep/website/flask-boilerplate/app/templates/layouts/main.html", line 58, in top-level template code
+    <li {% if request.endpoint == 'admin.show_panel' %} class="active" {% endif %}><a href="{{ url_for('admin.show_panel') }}">Dealers</a></li>
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/home/sahil/.local/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'admin_panel'. Did you mean 'admin.show_panel' instead?
+2019-02-03 11:10:10,125 ERROR: Exception on /about [GET] [in /home/sahil/.local/lib/python2.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/sahil/deep/website/flask-boilerplate/app/routes.py", line 16, in about
+    return render_template('pages/placeholder.about.html')
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/sahil/.local/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/sahil/.local/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/deep/website/flask-boilerplate/app/templates/pages/placeholder.about.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "/home/sahil/deep/website/flask-boilerplate/app/templates/layouts/main.html", line 58, in top-level template code
+    <li {% if request.endpoint == 'admin.show_panel' %} class="active" {% endif %}><a href="{{ url_for('admin.show_panel') }}">Dealers</a></li>
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/home/sahil/.local/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'admin_panel'. Did you mean 'admin.show_panel' instead?
+2019-02-03 11:10:10,212 ERROR: Exception on /favicon.ico [GET] [in /home/sahil/.local/lib/python2.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1713, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1644, in handle_http_exception
+    return handler(e)
+  File "/home/sahil/deep/website/flask-boilerplate/app/routes.py", line 26, in not_found_error
+    return render_template('errors/404.html'), 404
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/sahil/.local/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/sahil/.local/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/deep/website/flask-boilerplate/app/templates/errors/404.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "/home/sahil/deep/website/flask-boilerplate/app/templates/layouts/main.html", line 58, in top-level template code
+    <li {% if request.endpoint == 'admin.show_panel' %} class="active" {% endif %}><a href="{{ url_for('admin.show_panel') }}">Dealers</a></li>
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/home/sahil/.local/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'admin_panel'. Did you mean 'admin.show_panel' instead?
+2019-02-03 11:10:14,523 INFO: errors [in sekol.py:14]
+2019-02-03 11:10:29,137 ERROR: Exception on /admin_panel/ [GET] [in /home/sahil/.local/lib/python2.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/sahil/deep/website/flask-boilerplate/app/mod_admin/controllers.py", line 27, in show_panel
+    return render_template("admin_panel/list_users.html", users=users)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/sahil/.local/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/sahil/.local/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/deep/website/flask-boilerplate/app/templates/admin_panel/list_users.html", line 1, in top-level template code
+    {% extends "admin_panel/base.html" %}
+  File "/home/sahil/deep/website/flask-boilerplate/app/templates/admin_panel/base.html", line 1, in top-level template code
+    {% extends "main.html" %}
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 58, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 86, in _get_source_fast
+    raise TemplateNotFound(template)
+TemplateNotFound: main.html
+2019-02-03 11:11:25,857 ERROR: Exception on /admin_panel/ [GET] [in /home/sahil/.local/lib/python2.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/sahil/deep/website/flask-boilerplate/app/mod_admin/controllers.py", line 27, in show_panel
+    return render_template("admin_panel/list_users.html", users=users)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/sahil/.local/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/sahil/.local/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/deep/website/flask-boilerplate/app/templates/admin_panel/list_users.html", line 1, in top-level template code
+    {% extends "admin_panel/base.html" %}
+  File "/home/sahil/deep/website/flask-boilerplate/app/templates/admin_panel/base.html", line 1, in top-level template code
+    {% extends "layouts/main.html" %}
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 58, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 86, in _get_source_fast
+    raise TemplateNotFound(template)
+TemplateNotFound: main.html
+2019-02-03 11:11:26,713 ERROR: Exception on /admin_panel/ [GET] [in /home/sahil/.local/lib/python2.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/sahil/deep/website/flask-boilerplate/app/mod_admin/controllers.py", line 27, in show_panel
+    return render_template("admin_panel/list_users.html", users=users)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/sahil/.local/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/sahil/.local/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sahil/deep/website/flask-boilerplate/app/templates/admin_panel/list_users.html", line 1, in top-level template code
+    {% extends "admin_panel/base.html" %}
+  File "/home/sahil/deep/website/flask-boilerplate/app/templates/admin_panel/base.html", line 1, in top-level template code
+    {% extends "layouts/main.html" %}
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 58, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/sahil/.local/lib/python2.7/site-packages/flask/templating.py", line 86, in _get_source_fast
+    raise TemplateNotFound(template)
+TemplateNotFound: main.html
+2019-02-03 11:11:30,824 INFO: errors [in sekol.py:14]
+2019-02-03 11:15:37,561 INFO: errors [in sekol.py:14]
+2019-02-03 11:18:20,289 INFO: errors [in sekol.py:14]
+2019-02-03 11:21:15,667 INFO: errors [in sekol.py:14]
+2019-02-03 11:22:02,901 INFO: errors [in sekol.py:14]
+2019-02-03 11:22:03,294 INFO: errors [in sekol.py:14]
+2019-02-03 11:30:09,894 INFO: errors [in sekol.py:14]
+2019-02-03 11:40:55,708 INFO: errors [in sekol.py:14]
+2019-02-03 11:45:15,866 INFO: errors [in sekol.py:14]
+2019-02-03 11:45:34,600 INFO: errors [in sekol.py:14]
+2019-02-03 11:47:17,589 INFO: errors [in sekol.py:14]
+2019-02-03 11:48:26,125 INFO: errors [in sekol.py:14]
+2019-02-03 11:49:02,091 INFO: errors [in sekol.py:14]
+2019-02-03 13:15:04,910 INFO: errors [in sekol.py:14]
+2019-02-03 13:24:55,347 INFO: errors [in sekol.py:14]
+2019-02-03 13:25:37,384 INFO: errors [in sekol.py:14]
+2019-02-03 13:46:07,206 INFO: errors [in sekol.py:14]
+2019-02-03 13:46:27,983 INFO: errors [in sekol.py:14]
+2019-02-03 13:46:55,830 INFO: errors [in sekol.py:14]
+2019-02-03 13:47:11,522 INFO: errors [in sekol.py:14]
+2019-02-03 14:18:17,348 INFO: errors [in sekol.py:14]
+2019-02-03 14:18:17,882 INFO: errors [in sekol.py:14]
+2019-02-03 14:47:46,225 INFO: errors [in sekol.py:14]
+2019-02-03 14:52:19,151 INFO: errors [in sekol.py:14]
+2019-02-03 14:52:19,515 INFO: errors [in sekol.py:14]
+2019-02-03 14:52:59,716 INFO: errors [in sekol.py:14]
+2019-02-03 14:54:13,804 INFO: errors [in sekol.py:14]
+2019-02-03 14:54:14,239 INFO: errors [in sekol.py:14]
+2019-02-03 14:56:53,177 INFO: errors [in sekol.py:14]
+2019-02-03 14:56:53,540 INFO: errors [in sekol.py:14]
+2019-02-03 14:57:52,889 INFO: errors [in sekol.py:14]
+2019-02-03 15:01:25,095 INFO: errors [in sekol.py:14]
+2019-02-03 15:01:25,668 INFO: errors [in sekol.py:14]
+2019-02-03 15:09:38,486 INFO: errors [in sekol.py:14]
+2019-02-03 15:10:11,393 INFO: errors [in sekol.py:14]
+2019-02-03 15:10:42,265 INFO: errors [in sekol.py:14]
+2019-02-03 15:12:50,410 INFO: errors [in sekol.py:14]
+2019-02-03 15:12:50,850 INFO: errors [in sekol.py:14]
+2019-02-03 15:13:09,601 INFO: errors [in sekol.py:14]
+2019-02-03 15:13:19,220 INFO: errors [in sekol.py:14]
+2019-02-03 15:13:26,761 INFO: errors [in sekol.py:14]
+2019-02-03 15:13:31,357 INFO: errors [in sekol.py:14]
+2019-02-03 15:13:43,019 INFO: errors [in sekol.py:14]
+2019-02-03 15:13:51,651 INFO: errors [in sekol.py:14]
+2019-02-03 15:14:58,422 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-02-03 15:14:59,990 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-02-03 15:17:39,863 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-02-03 15:18:35,987 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-02-03 15:18:45,843 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-02-03 15:19:06,210 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-02-03 15:20:48,922 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-02-03 15:35:06,684 INFO: errors [in sekol.py:14]
+2019-02-03 15:35:07,274 INFO: errors [in sekol.py:14]
+2019-02-03 21:37:27,004 INFO: errors [in sekol.py:14]
+2019-02-03 21:37:27,386 INFO: errors [in sekol.py:14]
+2019-02-04 09:38:46,296 INFO: errors [in sekol.py:14]
+2019-02-04 09:38:47,340 INFO: errors [in sekol.py:14]
+2019-02-04 09:41:52,252 INFO: errors [in sekol.py:14]
+2019-02-04 09:41:52,617 INFO: errors [in sekol.py:14]
+2019-02-04 09:43:23,937 INFO: errors [in sekol.py:14]
+2019-02-04 09:45:21,931 INFO: errors [in sekol.py:14]
+2019-02-28 19:40:44,671 INFO: errors [in sekol.py:14]
+2019-02-28 19:40:45,184 INFO: errors [in sekol.py:14]
+2019-02-28 21:03:51,625 INFO: errors [in sekol.py:14]
+2019-02-28 21:03:52,189 INFO: errors [in sekol.py:14]
+2019-02-28 21:10:21,964 INFO: errors [in sekol.py:14]
+2019-02-28 21:10:22,332 INFO: errors [in sekol.py:14]
+2019-03-03 16:52:52,671 INFO: errors [in sekol.py:14]
+2019-03-03 16:52:53,201 INFO: errors [in sekol.py:14]
+2019-03-03 17:36:40,449 INFO: errors [in sekol.py:14]
+2019-03-03 17:36:41,014 INFO: errors [in sekol.py:14]
+2019-03-03 19:56:29,060 INFO: errors [in sekol.py:14]
+2019-03-03 19:56:29,612 INFO: errors [in sekol.py:14]
+2019-03-03 20:09:56,965 INFO: errors [in sekol.py:14]
+2019-03-04 08:07:13,286 INFO: errors [in sekol.py:14]
+2019-03-04 08:07:13,838 INFO: errors [in sekol.py:14]
+2019-03-04 09:15:33,685 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 09:15:35,347 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 11:33:42,319 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 11:38:17,973 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 11:39:39,094 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 11:41:06,537 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 12:22:30,687 INFO: errors [in sekol.py:14]
+2019-03-04 12:22:31,083 INFO: errors [in sekol.py:14]
+2019-03-04 12:24:15,125 INFO: errors [in sekol.py:14]
+2019-03-04 12:47:48,940 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 12:47:50,311 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 12:56:48,289 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 12:57:06,558 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 13:12:04,223 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 13:35:21,916 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 13:35:55,904 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 13:36:59,035 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 13:38:39,621 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 13:38:59,815 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 13:39:13,792 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 14:37:29,686 INFO: errors [in sekol.py:14]
+2019-03-04 14:37:30,215 INFO: errors [in sekol.py:14]
+2019-03-04 14:38:35,335 INFO: errors [in sekol.py:14]
+2019-03-04 14:39:39,651 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 14:39:41,228 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:02:44,982 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:02:46,393 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:06:06,219 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:10:48,822 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:12:40,668 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:13:33,691 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:18:34,127 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:18:44,363 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:21:04,647 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:23:47,034 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:24:13,260 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:24:22,806 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:24:33,892 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:24:42,409 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:25:48,928 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:26:07,175 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:27:16,887 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:27:18,221 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:33:59,333 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:34:00,665 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:37:59,617 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:38:26,136 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:39:44,151 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:39:57,304 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:40:35,725 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:48:16,784 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:48:23,886 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:48:38,008 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:49:11,201 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:49:54,487 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:49:55,861 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:52:40,120 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:55:59,179 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:56:10,863 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:56:28,172 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 15:58:01,167 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 16:02:52,595 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 16:03:31,605 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 16:20:27,599 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 16:20:29,567 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 16:21:05,465 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 16:56:49,584 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 17:05:28,882 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 17:08:25,010 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 19:50:32,148 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
+2019-03-04 19:50:33,570 INFO: errors [in /home/sahil/deep/website/flask-boilerplate/sekol.py:14]
