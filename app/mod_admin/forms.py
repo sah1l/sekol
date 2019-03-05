@@ -18,7 +18,7 @@ class UserInfoForm(FlaskForm):
     - organizations (select multiple field)
     """
     username = StringField('name', validators=[DataRequired()])
-    type = SelectField(u'User type', choices=[('admin', 'admin'), ('dealer', 'dealer'), ('designer', 'designer')])
+    type = SelectField(u'User type', choices=[('dealer', 'dealer'), ('designer', 'designer')])
     allow_create = BooleanField('Allowed to create users', default=False)
     allow_upload = BooleanField('Allowed to add categories', default=False)
     submit = SubmitField('Update')

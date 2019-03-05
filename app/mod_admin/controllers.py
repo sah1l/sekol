@@ -125,7 +125,10 @@ def list_categories():
 @mod_admin.route("/add_category", methods=["GET", "POST"])
 def add_category():
     form = CategoryCreateForm()
-    users = User.query.all()
+    if current_user.type == 'admin':
+        users = User.query.all()
+    else:
+        users = User.query.filter((User.boss == current_user.name) | (User.name == current_user.name))
     # empty_choice = [(0, " " * 10)]
     form.users.choices = [(user.name, user.name) for user in users]
 
