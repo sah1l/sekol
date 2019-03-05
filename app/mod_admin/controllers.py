@@ -154,7 +154,10 @@ def add_category():
 @mod_admin.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     form = CategoryInfoForm()
-    users = User.query.all()
+    if current_user.type == 'admin':
+        users = User.query.all()
+    else:
+        users = User.query.filter((User.boss == current_user.name) | (User.name == current_user.name))
     form.users.choices = [(user.name, user.name) for user in users]
     category = Category.query.filter_by(name=category_id).first()
     form.users.data = [u.name for u in category.users]
